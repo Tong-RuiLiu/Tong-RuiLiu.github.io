@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tong-Rui Liu</title>
+  <meta name="description" content="Tong-Rui Liu, postdoctoral researcher at CNRS Laboratory Navier: computational mechanics, scientific AI and scientific computing.">
+  <meta property="og:title" content="Tong-Rui Liu">
+  <meta property="og:description" content="Computational mechanics, scientific AI and scientific computing: fracture, multiscale homogenization, and GPU solvers in JAX.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap" aria-label="Sections">
+    <a class="home" href="#top">Tong-Rui Liu</a>
+    <span class="links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#cv">CV</a>
+    </span>
+  </nav>
+</header>
+
+<main id="top" class="wrap">
+
+  <section class="intro">
+    <h1>Tong-Rui Liu</h1>
+    <p class="role">Postdoctoral Researcher · CNRS Laboratory Navier, Institut Polytechnique de Paris</p>
+    <p class="lede">
+      Computational mechanics, scientific AI and scientific computing:
+      physics-based simulation, full-field AI prediction and generative
+      modelling for solid mechanics, and the scalable FEM and FFT solvers
+      behind them.
+    </p>
+    <ul class="contact">
+      <li><a href="mailto:tongrui.liu@enpc.fr">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=7SisegUAAAAJ">Google Scholar</a></li>
+      <li><a href="https://github.com/Tong-RuiLiu">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/tong-rui-liu-ba92ab134/">LinkedIn</a></li>
+      <li><a href="https://www.researchgate.net/profile/Tong-Rui-Liu">ResearchGate</a></li>
+      <li><a href="assets/files/Tong-Rui_Liu_CV.pdf">CV (PDF)</a></li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a computational mechanics and scientific AI researcher with a PhD
+      from Imperial College London, working on finite element analysis,
+      fracture mechanics, micromechanics, multiscale modelling and
+      GPU-accelerated scientific computing. I develop scalable FEM and FFT
+      solvers in JAX, MATLAB and C++.
+    </p>
+    <p>
+      At Laboratoire Navier I develop nonlinear homogenization and multiscale
+      frameworks for polycrystalline and composite materials, turning
+      heterogeneous microscale behaviour into efficient reduced-order
+      constitutive models for large-scale structural simulation, as part of
+      an ANR-funded collaborative programme with academic and industrial
+      partners.
+    </p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <article class="theme">
+      <h3>Multiscale homogenization</h3>
+      <p>
+        Reduced-order and full-field models that carry microstructure up to
+        the structural scale. Current work: a
+        <a href="#p-sca-2026">data-driven self-consistent clustering analysis
+        (SCA) with a minimal offline stage</a>, and a GPU-accelerated 3-D
+        FFT-based homogenization framework in JAX that scales to
+        <strong>200 million degrees of freedom</strong> for full-field strain
+        prediction in heterogeneous microstructures.
+      </p>
+      <p>
+        Earlier, at Imperial and as a visiting PhD student at Peking
+        University: clustering-based reduced-order models for
+        <a href="https://doi.org/10.1016/j.ijsolstr.2023.112407">3-D woven
+        composites</a>, <a href="https://doi.org/10.1007/s00466-023-02290-2">long-fibre
+        composites</a> and polycrystals, with SCA and crystal-plasticity SCA up
+        to two orders of magnitude faster than conventional numerical methods,
+        and FFT and crystal-plasticity FFT solvers in MATLAB-MEX and OpenMP.
+      </p>
+    </article>
+
+    <article class="theme">
+      <h3>Computational fracture</h3>
+      <p>
+        The virtual element method for fracture:
+        <a href="https://doi.org/10.1016/j.cma.2023.116050">phase-field dynamic
+        fracture</a> and
+        <a href="https://doi.org/10.1016/j.cma.2023.116708">hydrogen-assisted
+        cracking</a>.
+        With Yale University and the University of Pennsylvania:
+        GPU-accelerated finite element solvers in JAX for dynamic,
+        chemo-mechanical fracture and fatigue, up to 10× faster than CPU-only
+        implementations, using matrix-free Krylov solvers, geometric multigrid
+        and bound-constrained nonlinear optimization.
+      </p>
+    </article>
+
+
+    <article class="theme">
+      <h3>Scientific AI</h3>
+      <p>
+        Neural operators and generative models for full-field mechanics:
+        <a href="https://doi.org/10.1016/j.cma.2025.118373">Micrometer</a>, a
+        micromechanics transformer that predicts full-field responses of
+        heterogeneous materials;
+        <a href="https://doi.org/10.1038/s41467-026-72292-0">FunDiff</a>,
+        diffusion models over function spaces for physics-informed generative
+        modelling, to which I contributed numerical simulation and physical
+        validation; and
+        <a href="https://doi.org/10.1016/j.jcp.2026.114883">diffusion-based
+        correction and super-resolution</a> of simulation data.
+      </p>
+    </article>
+  </section>
+
+  <section id="software">
+    <h2>Software</h2>
+    <dl class="software">
+      <dt><a href="https://github.com/sifanexisted/micrometer">Micrometer</a> <span class="tag">Python · JAX</span></dt>
+      <dd>Micromechanics transformer for full-field responses of heterogeneous materials. Contributor: benchmark development and numerical evaluation.</dd>
+
+      <dt>JAX-RVE <span class="tag">Python · JAX</span></dt>
+      <dd>FFT-based homogenization and data-driven self-consistent clustering analysis for the mechanical response of heterogeneous materials.</dd>
+
+      <dt><a href="https://github.com/Tong-RuiLiu/Extended-SCA-and-FFT-based-strain-refinement-method-">Extended SCA and FFT-based strain refinement</a> <span class="tag">MATLAB</span></dt>
+      <dd>Three-stage full-field self-consistent clustering analysis for a 3-D woven-composite repeating unit cell.</dd>
+    </dl>
+  </section>
+
+  <section id="publications">
+    <h2>Selected publications</h2>
+    <p class="note"><sup>1</sup> equal contribution, <sup>*</sup> corresponding author</p>
+    <ol class="pubs">
+      <li id="p-sca-2026">
+        <span class="authors"><b>Tong-Rui Liu</b><sup>*</sup>, Jeremy Bleyer, Frederic Legoll, Michel Bornert.</span>
+        <span class="title">A general data-driven self-consistent clustering analysis for computational homogenization of heterogeneous material with minimal offline stage.</span>
+        <span class="venue">Preprint, submitted to <em>Journal of the Mechanics and Physics of Solids</em>, 2026.</span>
+      </li>
+      <li>
+        <span class="authors">Sifan Wang<sup>1</sup>, Zehao Dou<sup>1</sup>, Siming Shan, <b>Tong-Rui Liu</b>, Lu Lu<sup>*</sup>.</span>
+        <span class="title">FunDiff: Diffusion models over function spaces for physics-informed generative modeling.</span>
+        <span class="venue"><em>Nature Communications</em> 17, 5749 (2026).</span>
+        <a href="https://doi.org/10.1038/s41467-026-72292-0">doi</a>
+      </li>
+      <li>
+        <span class="authors">Wuzhe Xu<sup>*</sup>, Yulong Lu, Sifan Wang, <b>Tong-Rui Liu</b>.</span>
+        <span class="title">Improving data fidelity via diffusion model-based correction and super-resolution.</span>
+        <span class="venue"><em>Journal of Computational Physics</em> 559, 114883 (2026).</span>
+        <a href="https://doi.org/10.1016/j.jcp.2026.114883">doi</a>
+      </li>
+      <li>
+        <span class="authors">Sifan Wang<sup>1,*</sup>, <b>Tong-Rui Liu</b><sup>1</sup>, Shyam Sankaran, Paris Perdikaris.</span>
+        <span class="title">Micrometer: Micromechanics transformer for predicting full field mechanical responses of heterogeneous materials.</span>
+        <span class="venue"><em>Computer Methods in Applied Mechanics and Engineering</em> 448, 118373 (2026).</span>
+        <a href="https://doi.org/10.1016/j.cma.2025.118373">doi</a>
+      </li>
+      <li>
+        <span class="authors"><b>Tong-Rui Liu</b><sup>*</sup>, Fadi Aldakheel<sup>*</sup>, M.H. Aliabadi.</span>
+        <span class="title">Hydrogen assisted cracking using an efficient virtual element scheme.</span>
+        <span class="venue"><em>Computer Methods in Applied Mechanics and Engineering</em> 420, 116708 (2024).</span>
+        <a href="https://doi.org/10.1016/j.cma.2023.116708">doi</a>
+      </li>
+      <li>
+        <span class="authors"><b>Tong-Rui Liu</b><sup>*</sup>, Yang Yang, Omar Bacarreza, Shaoqiang Tang, M.H. Aliabadi.</span>
+        <span class="title">An extended full field self-consistent cluster analysis framework for woven composite.</span>
+        <span class="venue"><em>International Journal of Solids and Structures</em> 281, 112407 (2023).</span>
+        <a href="https://doi.org/10.1016/j.ijsolstr.2023.112407">doi</a>
+      </li>
+      <li>
+        <span class="authors"><b>Tong-Rui Liu</b><sup>*</sup>, Fadi Aldakheel<sup>*</sup>, M.H. Aliabadi.</span>
+        <span class="title">Virtual element method for phase field modeling of dynamic fracture.</span>
+        <span class="venue"><em>Computer Methods in Applied Mechanics and Engineering</em> 411, 116050 (2023).</span>
+        <a href="https://doi.org/10.1016/j.cma.2023.116050">doi</a>
+      </li>
+      <li>
+        <span class="authors">Yang Yang, <b>Tong-Rui Liu</b>, M.H. Aliabadi, Shaoqiang Tang<sup>*</sup>.</span>
+        <span class="title">Virtual clustering analysis for long fiber reinforced composites.</span>
+        <span class="venue"><em>Computational Mechanics</em> 71, 1139–1159 (2023).</span>
+        <a href="https://doi.org/10.1007/s00466-023-02290-2">doi</a>
+      </li>
+    </ol>
+    <p class="note">Full list on <a href="https://scholar.google.com/citations?user=7SisegUAAAAJ">Google Scholar</a>.</p>
+  </section>
+
+  <section id="talks">
+    <h2>Talks</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">Sep 2026</span>
+        <span class="what"><b>A general self-consistent clustering analysis for computational homogenization of composite materials using minimal offline stage.</b>
+        Conference talk, 44th Solid Mechanics Conference (SolMech 2026), Kraków, Poland.</span>
+      </li>
+      <li>
+        <span class="when">Jan 2024</span>
+        <span class="what"><b>Virtual element method for computational fracture mechanics.</b>
+        Invited talk, School of Mechanics and Aerospace Engineering, Dalian University of Technology.</span>
+      </li>
+      <li>
+        <span class="when">Sep 2023</span>
+        <span class="what"><b>Numerical recipes of virtual element method for phase field modeling of brittle fracture.</b>
+        Conference talk, 21st International Conference on Fracture and Damage Mechanics (FDM 2023), London, UK.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section id="cv">
+    <h2>Experience and education</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">2025 – now</span>
+        <span class="what"><b>Postdoctoral Researcher</b>, CNRS Laboratory Navier, Institut Polytechnique de Paris, France.</span>
+      </li>
+      <li>
+        <span class="when">2024 – 2025</span>
+        <span class="what"><b>Research Collaborator</b>, Yale University and University of Pennsylvania (remote).</span>
+      </li>
+      <li>
+        <span class="when">2020 – 2024</span>
+        <span class="what"><b>PhD in Computational Mechanics</b>, Imperial College London, UK.</span>
+      </li>
+      <li>
+        <span class="when">2020 – 2021</span>
+        <span class="what"><b>Visiting PhD Student</b>, College of Engineering, Peking University, Beijing, China.</span>
+      </li>
+      <li>
+        <span class="when">2018 – 2019</span>
+        <span class="what"><b>MSc in Advanced Computational Methods for Aeronautics, Flow Management and Fluid-Structure Interaction</b>, Imperial College London, UK.</span>
+      </li>
+      <li>
+        <span class="when">2014 – 2018</span>
+        <span class="what"><b>BEng in Process Equipment and Control Engineering</b>, Dalian University of Technology, China.</span>
+      </li>
+    </ol>
+    <p class="note">Member of the French Association of Mechanics (AFM) and the European Mechanics Society (EuroMech). Skills, awards and everything else: <a href="assets/files/Tong-Rui_Liu_CV.pdf">full CV (PDF)</a>.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>
+    <a href="mailto:tongrui.liu@enpc.fr">tongrui.liu@enpc.fr</a> ·
+    <a href="mailto:tongrui.liu18@alumni.imperial.ac.uk">tongrui.liu18@alumni.imperial.ac.uk</a>
+  </p>
+  <p>© 2026 Tong-Rui Liu · Last updated October 2026</p>
+</footer>
+
+</body>
+</html>

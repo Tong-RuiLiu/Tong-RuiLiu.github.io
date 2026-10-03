@@ -1,0 +1,135 @@
+:root {
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #1d2127;
+  --muted: #5b6370;
+  --rule: #e3e6ea;
+  --accent: #b3261e;
+  --accent-soft: #fbe9e7;
+  --code-bg: #f1f2f4;
+  --todo-bg: #fff4c2;
+  --todo-text: #6b5300;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16191e;
+    --surface: #1d2127;
+    --text: #e6e8eb;
+    --muted: #a3aab5;
+    --rule: #2e333b;
+    --accent: #ff7a6b;
+    --accent-soft: #3a1f1d;
+    --code-bg: #262a31;
+    --todo-bg: #4a3d0a;
+    --todo-text: #ffe28a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 var(--sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+code {
+  font: 0.86em var(--mono);
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* header */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+header.site nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; height: 3.5rem;
+}
+header.site .home { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--text); text-decoration: none; }
+header.site .links { display: flex; gap: 1.1rem; font-size: 0.92rem; }
+header.site .links a { color: var(--muted); text-decoration: none; }
+header.site .links a:hover { color: var(--accent); }
+
+/* intro */
+.intro { padding: 4rem 0 1rem; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.25; }
+h1 { font-size: 2.6rem; margin: 0 0 0.25rem; letter-spacing: -0.01em; }
+.role { margin: 0 0 1.25rem; color: var(--muted); }
+.lede { font-size: 1.2rem; line-height: 1.55; margin: 0 0 1.5rem; max-width: 38rem; }
+.contact { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
+
+/* sections */
+section { padding: 2.25rem 0 0.5rem; border-top: 1px solid var(--rule); margin-top: 2rem; }
+section.intro { border-top: 0; margin-top: 0; }
+h2 { font-size: 1.55rem; margin: 0 0 1rem; }
+h3 { font-size: 1.25rem; margin: 0 0 0.75rem; }
+h3 code { font-size: 0.8em; }
+
+.interests { padding-left: 1.2rem; }
+.interests li { margin: 0.35rem 0; }
+
+.theme { margin: 0 0 2.5rem; }
+
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  h1 { font-size: 2.1rem; }
+  .intro { padding-top: 2.5rem; }
+  header.site .links { gap: 0.8rem; font-size: 0.86rem; }
+  header.site .home { display: none; }
+}
+
+/* software */
+.software dt { font-weight: 600; margin-top: 1.1rem; }
+.software dd { margin: 0.2rem 0 0; color: var(--text); }
+.tag { font-weight: 400; font-size: 0.8rem; color: var(--muted); margin-left: 0.4rem; white-space: nowrap; }
+.status { color: var(--muted); font-style: italic; }
+
+/* publications and CV */
+.note { color: var(--muted); font-size: 0.9rem; }
+.pubs { list-style: none; padding: 0; margin: 1rem 0; }
+.pubs li { margin: 0 0 1.1rem; font-size: 0.95rem; line-height: 1.55; }
+.pubs .authors, .pubs .venue { color: var(--muted); }
+.pubs .title { display: block; color: var(--text); font-weight: 600; }
+.pubs .authors b { color: var(--text); }
+.pubs li:target { background: var(--accent-soft); border-radius: 6px; outline: 6px solid var(--accent-soft); }
+.timeline { list-style: none; padding: 0; margin: 1rem 0; }
+.timeline li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; margin: 0 0 0.9rem; font-size: 0.95rem; }
+.timeline .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) {
+  .timeline li { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+
+/* placeholders: visible on purpose, so none ships unnoticed */
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-text);
+  border: 1px dashed currentColor;
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  font-size: 0.92em;
+}
+
+footer p { margin: 0.3rem 0; }
+footer { padding: 2.5rem 16px 3rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--rule); margin-top: 3rem; }
